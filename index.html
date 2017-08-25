@@ -13,22 +13,41 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/css/zenburn.min.css">
 
     <script>
+      // リクエストパラメータを取得
+      const getRequestParameters = () => {
+        return location.search.substring(1).split('&').reduce((acc, cur) => {
+          var element = cur.split("=");
+          acc[decodeURIComponent(element[0])] = decodeURIComponent(element[1]);
+          return acc;
+        }, {});
+      };
+
       window.addEventListener("load", function(){
+        if (document.location.search.length < 1) {
+          // TODO アラートでも出す？
+          return
+        }
+        const parameters = getRequestParameters();
+        const markdownUrl = parameters["slide"];
+        // const markdownUrl = "//raw.githubusercontent.com/yamap55/Slide/master/20170823/firstGroovy.md";
+
         const slideSection = document.createElement("section");
-        slideSection.dataset.markdown = "//raw.githubusercontent.com/yamap55/Slide/master/20170823/firstGroovy.md";
+        slideSection.dataset.markdown = markdownUrl;
         slideSection.dataset.separator = "\n---\n$";
         slideSection.dataset.separatorVertical = "\n--\n";
         slideSection.setAttribute("id", "slide");
         const slides = document.getElementById("slides");
         slides.appendChild(slideSection);
-      Reveal.initialize({
-        dependencies: [
-          { src: '//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/markdown/marked.js' },
-          { src: '//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/markdown/markdown.min.js' },
-          { src: '//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.min.js', async: true },
-          { src: '//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-        ]
+        Reveal.initialize({
+          dependencies: [
+            { src: '//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/markdown/marked.js' },
+            { src: '//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/markdown/markdown.min.js' },
+            { src: '//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.min.js', async: true },
+            { src: '//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+          ]
         }, false);
+        // TODO ページのタイトルを変更。 document.title = "title";
+        // markdownの1行目取得とか？
       });
       </script>
 
