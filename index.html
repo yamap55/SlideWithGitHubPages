@@ -60,6 +60,17 @@
       link.href = window.location.search.match( /print-pdf/gi ) ? "//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.min.css" : "//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/paper.css";
       document.getElementsByTagName( "head" )[0].appendChild(link);
     </script>
+    <style type="text/css">
+      /* タイトルの大文字変換を無効 */
+      .reveal h1,
+      .reveal h2,
+      .reveal h3,
+      .reveal h4,
+      .reveal h5,
+      .reveal h6 {
+        text-transform: none;
+      }
+    </style>
   </head>
   <body>
     <div class="reveal">
