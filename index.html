@@ -45,6 +45,10 @@
             { src: "//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/highlight/highlight.min.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
           ]
         }, false);
+        Reveal.addEventListener("ready", (event) => {
+          // タイトル設定
+          document.title = document.getElementsByTagName("h1")[0].innerText;
+        });
       });
       </script>
 
