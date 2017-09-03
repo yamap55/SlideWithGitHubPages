@@ -39,4 +39,12 @@ public class HelloWorld {
 
 ---
 
+## image
+
+![image](/SlideWithGitHubPages/example/img1.jpg)
+
+- please use the root path for image path.
+
+---
+
 https://github.com/yamap55/SlideWithGitHubPages
