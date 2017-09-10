@@ -39,11 +39,15 @@ public class HelloWorld {
 
 ---
 
-## image
+## image1 img1.jpg
 
-![image](/SlideWithGitHubPages/example/img1.jpg)
+![image](img1.jpg)
 
-- please use the root path for image path.
+---
+
+## image2 img/img2.jpg
+
+![image](img/img2.jpg)
 
 ---
 

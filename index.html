@@ -48,6 +48,17 @@
         Reveal.addEventListener("ready", (event) => {
           // タイトル設定
           document.title = document.getElementsByTagName("h1")[0].innerText;
+
+          // fix img.src to relative path from index.html
+          const url = location.href.replace(/\?.*$/,"");
+          const mainPath = url.substring(0,url.lastIndexOf("/"));
+          const markDownDirPath = markdownUrl.substring(0, markdownUrl.lastIndexOf("/"));
+          Array.from(document.getElementsByTagName("img"), el => {
+            const imagePath = el.getAttribute("src");
+            const relativePath = imagePath.split(mainPath)[1];
+            const result = relativePath ? markDownDirPath + relativePath : markDownDirPath + "/" + imagePath;
+            el.setAttribute("src",result);
+          });
         });
       });
       </script>
