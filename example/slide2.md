@@ -51,4 +51,10 @@ public class HelloWorld {
 
 ---
 
+## image3 absolute path
+
+![image](//yamap55.github.io/Slide/20170827/img1.jpg)
+
+---
+
 https://github.com/yamap55/SlideWithGitHubPages
