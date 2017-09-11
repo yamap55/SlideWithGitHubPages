@@ -56,6 +56,10 @@
           Array.from(document.getElementsByTagName("img"), el => {
             const imagePath = el.getAttribute("src");
             const relativePath = imagePath.split(mainPath)[1];
+            if (!relativePath && imagePath.match(/^(https?:)?\/\//)) {
+              // another domain and absolute path case
+              return;
+            }
             const result = relativePath ? markDownDirPath + relativePath : markDownDirPath + "/" + imagePath;
             el.setAttribute("src",result);
           });
