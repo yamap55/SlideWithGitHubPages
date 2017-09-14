@@ -14,7 +14,7 @@ Markdownでスライド書いて、自分のGitHubで管理して、自分のGit
 ### initialize
 - git clone or fork
 - プロジェクトのsettings
-- GitHub Pagesとして公開
+- [GitHub Pagesとして公開](https://www.google.com/search?q=github+pages)
 - 以下にアクセス
   - http://${userId}.github.io/${repositoryName}/index.html?slide=example/slide1.md
 
@@ -25,7 +25,15 @@ Markdownでスライド書いて、自分のGitHubで管理して、自分のGit
 - 以下にアクセス
   - http://${userId}.github.io/${repositoryName}/index.html?slide=${markdownPath}
 
+### print-pdf
+- URL末尾に「&print-pdf」を付与して表示。
+  - 例 : http://yamap55.github.io/SlideWithGitHubPages/index.html?slide=example/slide1.md&print-pdf
+- ブラウザの印刷設定
+- PDFに保存、横向き、背景のグラフィックにチェック
+- 保存
+
 ## Notes
 - GitHub Pagesなので更新が遅い場合があります
   - ブラウザにキャッシュされている場合もある（キャッシュクリアや別ブラウザ、シークレットモードなどで確認）
 - 古いブラウザは考慮していません
+- オフラインでは見れません
