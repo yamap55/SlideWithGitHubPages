@@ -7,11 +7,11 @@
     <title>reveal.js</title>
     <link rel="icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/black.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/6.0.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/6.0.1/theme/black.min.css">
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/css/zenburn.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/6.0.1/plugin/highlight/zenburn.min.css">
 
     <script>
       // リクエストパラメータを取得
@@ -39,14 +39,9 @@
         document.getElementById("slide").dataset.markdown = markdownUrl;
 
         Reveal.initialize({
-          dependencies: [
-            { src: "//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/markdown/marked.js" },
-            { src: "//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/markdown/markdown.min.js" },
-            { src: "//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.min.js", async: true },
-            { src: "//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/highlight/highlight.min.js", async: true, callback: function() { hljs.initHighlighting(); } }
-          ]
-        }, false);
-        Reveal.addEventListener("ready", (event) => {
+          plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+        });
+        Reveal.on("ready", (event) => {
           // タイトル設定
           document.title = document.getElementsByTagName("h1")[0].innerText;
 
@@ -68,14 +63,6 @@
       });
       </script>
 
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( "link" );
-      link.rel = "stylesheet";
-      link.type = "text/css";
-      link.href = window.location.search.match( /print-pdf/gi ) ? "//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.min.css" : "//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/paper.css";
-      document.getElementsByTagName( "head" )[0].appendChild(link);
-    </script>
     <style type="text/css">
       /* タイトルの大文字変換を無効 */
       .reveal h1,
@@ -94,7 +81,9 @@
         <section data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$" id="slide" />
       </div>
     </div>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/6.0.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/6.0.1/plugin/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/6.0.1/plugin/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/6.0.1/plugin/notes.min.js"></script>
   </body>
 </html>
