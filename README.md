@@ -20,7 +20,7 @@ Markdownでスライド書いて、自分のGitHubで管理して、自分のGit
 
 ### add slide
 - Markdownでスライドを書く
-  - 書き方は[検索](https://www.google.com/search?q=revelal.js+markdown)するか、[サンプル](https://raw.githubusercontent.com/yamap55/SlideWithGitHubPages/master/example/slide1.md)見てください。
+  - 書き方は[検索](https://www.google.com/search?q=reveal.js+markdown)するか、[サンプル](https://raw.githubusercontent.com/yamap55/SlideWithGitHubPages/master/example/slide1.md)見てください。
 - GitHubにpush
 - 以下にアクセス
   - http://${userId}.github.io/${repositoryName}/index.html?slide=${markdownPath}
